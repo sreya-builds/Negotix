@@ -3,10 +3,6 @@
 Negotix is an interactive AI-powered negotiation game where users bargain with a simulated seller to get the lowest possible price.
 The game is not just about entering numbers — it’s about strategy, timing, and understanding behavior.
 
- 🚀 Live Demo
-👉 https://your-vercel-link.vercel.app  
-👉 Backend API: https://your-render-link.onrender.com
-
 🎯 Project Goal
 To simulate real-world negotiation scenarios using:
 - Behavior-based AI responses

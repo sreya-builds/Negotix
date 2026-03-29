@@ -5,6 +5,8 @@ import InputBox from "./components/InputBox"
 import Leaderboard from "./components/Leaderboard"
 import { MAX_ROUNDS, extractOffer } from "./utils/negotiation"
 
+const API_URL = import.meta.env.VITE_API_URL
+
 function App() {
   const [playerName, setPlayerName] = useState("")
   const [nameSubmitted, setNameSubmitted] = useState(false)
@@ -26,7 +28,7 @@ function App() {
 
   const fetchLeaderboard = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/game/leaderboard")
+      const response = await fetch(`${API_URL}/api/game/leaderboard`)
       const data = await response.json()
       setLeaderboard(data.leaderboard || [])
     } catch (error) {
@@ -38,7 +40,7 @@ function App() {
     try {
       setLoading(true)
 
-      const response = await fetch("http://localhost:5000/api/game/start")
+      const response = await fetch(`${API_URL}/api/game/start`)
       const data = await response.json()
 
       setProduct(data.product)
@@ -106,7 +108,7 @@ function App() {
     try {
       if (!playerName.trim()) return
 
-      await fetch("http://localhost:5000/api/game/save-score", {
+      await fetch(`${API_URL}/api/game/save-score`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -168,7 +170,7 @@ function App() {
     try {
       setAiTyping(true)
 
-      const response = await fetch("http://localhost:5000/api/game/negotiate", {
+      const response = await fetch(`${API_URL}/api/game/negotiate`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -222,7 +224,7 @@ function App() {
     return (
       <div className="auth-screen">
         <div className="auth-card">
-          <h1>Negotiation Game 🧠💰</h1>
+          <h1>Negotix🧠</h1>
           <p className="auth-subtitle">Enter your name to start bargaining</p>
 
           <input
@@ -263,7 +265,7 @@ function App() {
           <div className="panel-card game-card">
             <div className="game-header">
               <div>
-                <h1 className="game-title">Negotix</h1>
+                <h1 className="game-title">Negotiation Game</h1>
                 <p className="game-subtitle">
                   Outsmart the seller and close the lowest deal
                 </p>

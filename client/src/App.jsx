@@ -271,7 +271,7 @@ function App() {
           <div className="panel-card game-card">
             <div className="game-header">
               <div>
-                <h1 className="game-title">Negotiation Game</h1>
+                <h1 className="game-title">Negotix</h1>
                 <p className="game-subtitle">
                   Outsmart the seller and close the lowest deal
                 </p>
